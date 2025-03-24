@@ -39,6 +39,24 @@ function showObject(myObject) {
 // Display the original object by updating the HTML element with id "inputObject"
 // "inputObject" is assumed to be an existing HTML element where the movie details will be shown
 document.getElementById("input-object").innerHTML = showObject(myMovie);
-//Print the object printed in the console
+//Print the object to the console
 console.log(myMovie);
+
+// ---------------------------------------------------------------------
+// Step 2: Add properties to the object
+/**
+ * @property { float number } myMovie.rating - The rating of the movie.
+ * @property { string } myMovie.summary - The summary of the movie
+ */
+// Add a new property "rating" with a value of 5 to the "myMovie" object
+myMovie.rating = 5;
+// Add a new property "summary" with a description of the movie to the "myMovie" object
+myMovie.summary = "World War II movie about the Normandy landings";
+
+// Display the updated object with new properties in the HTML element with id "addPropertiesObject"
+document.getElementById("add-properties-object").innerHTML = showObject(myMovie);
+
+//Print the object to the console after add properties.
+console.log(myMovie);
+
 
