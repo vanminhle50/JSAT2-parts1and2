@@ -139,6 +139,50 @@ if (sequentialSearch(sortedArray, numberTest) === -1) {
   document.getElementById('index-sequential-search-2').innerHTML = `<span class="bold">The index of number <span class="note"> ${numberTest} </span> in the array is <span class="note"> ${sequentialSearch(sortedArray, numberTest)} </span></span>`;
 }
 
+// Step 6: Create the binary search function
+/**
+ * Searches for a target number in a sorted array using binary search.
+ * @param {Array} arr - The sorted array to search.
+ * @param {number} target - The number to search for.
+ * @returns {number} - The index of the target if found, or -1 if not found.
+ */
+function binarySearch(arr, target) {
+  let begin = 0, end = arr.length - 1;
+
+  while (begin <= end) {
+    let middle = Math.floor((begin + end) / 2);
+    if (arr[middle] === target) {
+      return middle;
+    } else if (arr[middle] < target) {
+      begin = middle + 1;
+    } else {
+      end = middle - 1;
+    }
+  }
+  return -1;
+}
+
+// Test the binary search function and display the results
+
+// Test case 1: Search for number 100
+let numberTest2 = 100;
+if (binarySearch(sortedArray, numberTest2) === -1) {
+  console.log(`Number ${numberTest2} not found in the array`);
+  document.getElementById('index-binary-search-1').innerHTML = `<span class="bold">Number <span class="note"> ${numberTest2} </span> not found in the array</span>`;
+} else {
+  console.log(`The index of number ${numberTest2} in the array is ${binarySearch(sortedArray, numberTest2)}`);
+  document.getElementById('index-binary-search-1').innerHTML = `<span class="bold">The index of number <span class="note"> ${numberTest2} </span> in the array is <span class="note"> ${binarySearch(sortedArray, numberTest2)} </span> (Array[${binarySearch(sortedArray, numberTest2)}] = ${sortedArray[binarySearch(sortedArray, numberTest2)]})</span>`;
+}
+
+// Test case 2: Search for number 11
+numberTest2 = 11;
+if (binarySearch(sortedArray, numberTest2) === -1) {
+  console.log(`Number ${numberTest2} not found in the array`);
+  document.getElementById('index-binary-search-2').innerHTML = `<span class="bold">Number <span class="note"> ${numberTest2} </span> not found in the array</span>`;
+} else {
+  console.log(`The index of number ${numberTest2} in the array is ${binarySearch(sortedArray, numberTest2)}`);
+  document.getElementById('index-binary-search-2').innerHTML = `<span class="bold">The index of number <span class="note"> ${numberTest2} </span> in the array is <span class="note"> ${binarySearch(sortedArray, numberTest2)} </span> (Array[${binarySearch(sortedArray, numberTest2)}] = ${sortedArray[binarySearch(sortedArray, numberTest2)]})</span>`;
+}
 
 
 // Display the final state of the array in all HTML elements with the class "show-array"
