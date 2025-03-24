@@ -101,3 +101,48 @@ console.log(`The array after remove the numbers 8 and 31: ${sortedArray}`);
 
 // Display the array after removal in HTML element with id "removedArray"
 document.getElementById('removed-array').innerHTML = `<span class="bold note"> ${sortedArray} </span>`;
+
+// Step 5: Create the sequential search function
+/**
+ * Searches for a target number in the array using sequential search.
+ * @param {Array} arr - The array to search.
+ * @param {number} target - The number to find.
+ * @returns {number} - The index of the target if found, or -1 if not found.
+ */
+function sequentialSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+// Test the sequential search function and display the results
+// Test case 1: Search for number 20
+let numberTest = 20;
+if (sequentialSearch(sortedArray, numberTest) === -1) {
+  console.log(`Number ${numberTest} not found in the array`);
+  document.getElementById('index-sequential-search-1').innerHTML = `<span class="bold">Number <span class="note"> ${numberTest} </span> not found in the array</span>`;
+} else {
+  console.log(`The index of number ${numberTest} in the array is ${sequentialSearch(sortedArray, numberTest)}`);
+  document.getElementById('index-sequential-search-1').innerHTML = `<span class="bold">The index of number <span class="note"> ${numberTest} </span> in the array is <span class="note"> ${sequentialSearch(sortedArray, numberTest)} </span></span>`;
+}
+
+// Test case 2: Search for number 4
+numberTest = 4;
+if (sequentialSearch(sortedArray, numberTest) === -1) {
+  console.log(`Number ${numberTest} not found in the array`);
+  document.getElementById('index-sequential-search-2').innerHTML = `<span class="bold">Number <span class="note"> ${numberTest} </span> not found in the array</span>`;
+} else {
+  console.log(`The index of number ${numberTest} in the array is ${sequentialSearch(sortedArray, numberTest)}`);
+  document.getElementById('index-sequential-search-2').innerHTML = `<span class="bold">The index of number <span class="note"> ${numberTest} </span> in the array is <span class="note"> ${sequentialSearch(sortedArray, numberTest)} </span></span>`;
+}
+
+
+
+// Display the final state of the array in all HTML elements with the class "show-array"
+let showArrayElements = document.getElementsByClassName('show-array');
+for (let i = 0; i < showArrayElements.length; i++) {
+  showArrayElements[i].innerHTML = `Array = { ${sortedArray} }`;
+}
