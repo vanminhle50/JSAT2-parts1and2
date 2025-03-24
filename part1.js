@@ -74,4 +74,30 @@ insertNumber(sortedArray, 30);
 document.getElementById('inserted-array').innerHTML = `<span class="bold note"> ${sortedArray} </span>`;
 
 //Print the array after insert to the screen.
-console.log(`The sorted array ${sortedArray}`);
+console.log(`The sorted array after insert the numbers 19, 23 and 30: ${sortedArray}`);
+
+// Step 4: Function to remove a number from the array
+/**
+ * Removes the first occurrence of a given number from the array.
+ * @param {Array} arr - The array from which the number will be removed.
+ * @param {number} num - The number to remove.
+ * @returns {Array} - The updated array after removal.
+ */
+function removeNumber(arr, num) {
+  let index = arr.indexOf(num);
+  if (index > -1) {
+    arr.splice(index, 1);
+  }
+  return arr;
+}
+
+// Remove the numbers 8 and 31 from the array
+removeNumber(sortedArray, 8);
+removeNumber(sortedArray, 31);
+
+//Print the array after remove the number 8 and 31 to the screen.
+console.log(`The array after remove the numbers 8 and 31: ${sortedArray}`);
+
+
+// Display the array after removal in HTML element with id "removedArray"
+document.getElementById('removed-array').innerHTML = `<span class="bold note"> ${sortedArray} </span>`;
