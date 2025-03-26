@@ -72,3 +72,13 @@ console.log(`The object to the console after changing properties:`);
 console.log(myMovie);
 // Display the object with changed property values in the HTML element with id "changingPropertiesObject"
 document.getElementById("changing-properties-object").innerHTML = showObject(myMovie);
+
+// Step 4: Remove a property from the object
+// Remove the "summary" property from the "myMovie" object
+delete myMovie.summary;
+
+//Print the object to the console after deleting the "summary" property.
+console.log(`The object to the console after deleting the "summary" property:`);
+console.log(myMovie);
+// Display the object after deleting the "summary" property in the HTML element with id "deletePropertyObject"
+document.getElementById("delete-properties-object").innerHTML = showObject(myMovie);
