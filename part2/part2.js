@@ -57,6 +57,18 @@ myMovie.summary = "World War II movie about the Normandy landings";
 document.getElementById("add-properties-object").innerHTML = showObject(myMovie);
 
 //Print the object to the console after add properties.
+console.log(`The object to the console after add properties:`);
 console.log(myMovie);
 
+// Step 3: Change the values of the properties
 
+// Update the "rating" property to 4
+myMovie.rating = 4;
+// Update the "year" property to 1962
+myMovie.year = 1962;
+
+//Print the object to the console after changing properties.
+console.log(`The object to the console after changing properties:`);
+console.log(myMovie);
+// Display the object with changed property values in the HTML element with id "changingPropertiesObject"
+document.getElementById("changing-properties-object").innerHTML = showObject(myMovie);
